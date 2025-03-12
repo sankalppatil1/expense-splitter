@@ -3,25 +3,27 @@ import AppDialogBox from "@/components/AppDialogBox";
 import DialogBoxBody from "@/components/DialogBoxBody";
 import ExpenseList from "@/components/ExpenseList";
 import { ReactNode } from "react";
+import AppDialogTrigger from "@/components/AppDialogTrigger";
+import AppDialogFooter from "@/components/AppDialogFooter";
 
 type dialogProps = {
   dialogTitle:string;
-  dialogTriggerValue:string;
-   dialogBody:ReactNode
-   dialogFooterTitle:ReactNode
+  dialogTriggerValue:ReactNode;
+   dialogBody:ReactNode;
+   dialogFooter:ReactNode;
 }
 
-const Dashboard : React.FC<dialogProps> = ({dialogTitle,dialogTriggerValue,dialogBody,dialogFooterTitle})=>{
+const Dashboard : React.FC<dialogProps> = ({dialogTitle='Add Expense'})=>{
 
-  dialogTriggerValue='+ Split Bill';
+  
 return (
     <div className="width-full flex flex-col">
       <div className="flex w-full justify-center">
         <AppDialogBox
-        dialogTriggerValue={dialogTriggerValue}
-        dialogTitle={dialogTitle = 'Add Expense'}
+        dialogTriggerValue={<AppDialogTrigger/>}
+        dialogTitle={dialogTitle}
         dialogBody={<DialogBoxBody />}
-        dialogFooterTitle='Split'
+        dialogFooter={<AppDialogFooter/>}
       />
       </div>
       <ExpenseList />
