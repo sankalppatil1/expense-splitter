@@ -3,7 +3,7 @@ import React from 'react'
 import { Button } from './ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 {}
-function ListItem({ amount, name,handleClick}: { name: string, amount: number,handleClick:()=>void}) {
+function ListItem({ amount, name}: { name: string, amount: number}) {
 
 
 
@@ -20,7 +20,7 @@ function ListItem({ amount, name,handleClick}: { name: string, amount: number,ha
                 </div>
             </div>
             <div className='flex gap-x-2'>
-                <Button variant={"outline"} type="button" onClick={()=> handleClick()}>Click me</Button>
+                <Button variant={"outline"} type="button">Click me</Button>
                 <Button variant={"secondary"} type="button">Click me</Button>
             </div>
         </li>
